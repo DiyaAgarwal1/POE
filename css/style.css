@@ -1,0 +1,230 @@
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+
+*{
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+body{
+    background-color:rgb(1, 101, 51)
+  }
+  .header img {
+    float: left;
+    width: 350px;
+    height: 250px;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 10px;
+    color:white;
+    font-size:90px;
+  }
+  
+  h2{
+    text-align:center;
+    color:white;
+    font-size:50px;
+  }
+  .button {
+    border-radius: 5px;
+    background-color: rgb(1, 85, 51);
+    border-style:solid;
+    border-width:3px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 13%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+/* FOOTER */
+  .footer_section {
+    width: 100%;
+    float: left;
+    background-color: #f2f2f2;
+    height: auto;
+    padding-bottom: 90px;
+    padding-left: 5%;
+    margin-top: 20px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.fooer_logo {
+    width: 100%;
+    float: left;
+    padding-bottom: 40px;
+}
+.customer_text {
+    width: 100%;
+    float: right;
+    font-size: 24px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer_lorem_text{
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: black;
+    margin-left: 0px;
+}
+.footer_lorem_text1 {
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: black;
+    margin-left: 0px;
+    margin-bottom: 0;
+
+}
+.footer_lorem_text2 {
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: black;
+    margin-left: 0px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.social_icon{
+    width: 80%;
+    float: left;
+}
+.social_icon ul{
+    margin: 0px;
+    padding: 0px;
+    display: inline-flex;
+}
+.social_icon li {
+    float: left;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.time_main {
+    padding-top: 20px;
+    width: 100%;
+    float: left;
+}
+
+.margin_top0{
+    margin-top: 90px;
+}
+.monday_text{
+    padding-left: 58px;
+}
+.monday_text1{
+    padding-left: 58px;
+}
+.monday_text2{
+    padding-left: 50px;
+}
+.monday_text3{
+    padding-left: 75px;
+}
+.monday_text4{
+    padding-left: 55px;
+}
+.monday_text5{
+    padding-left: 66px;
+}
+
+.margin_0{
+    margin: 90px 0px;
+}
+
+.copyright_section {
+    width: 100%;
+    float: left;
+    background-color: rgb(1, 101, 51);
+    height: auto;
+}
+
+.copyright_text {
+    width: 100%;
+    float: left;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 0px;
+}
+.copyright_text a{
+    color: #ffffff;
+}
+.copyright_text a:hover{
+    color: #ef5051;
+}
+p.academic-section{
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+@media(max-width:991px){
+  .footer_section {
+    width: 100%;
+    float: left;
+    background-color: #f2f2f2;
+    height: auto;
+    padding-bottom: 90px;
+    padding-left: 5%;
+    margin-top: 20px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .header img {
+    margin-left: 25%;
+    width: 250px;
+    height: 250px;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 10px;
+    color:white;
+    font-size:70px;
+  }
+  .btn-part{
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-part .button{
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+  

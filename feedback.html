@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+    <div id="feedback-container">
+        <div id="feedback-title">Feedback from students</div>
+        <form>
+            <label for="name">
+                <div class="feedbackLabel">Your name:</div>
+            </label>
+            <input id="name" class="feedbackInfo" type="text" placeholder="Your name" required><br>
+            <label for="email">
+                <div class="feedbackLabel">Your e-mail addess</div>
+            </label>
+            <input id="email" class="feedbackInfo" type="text" placeholder="Your e-mail address" required><br>
+            <label for="rbPgRating"><div class="feedbackLabel">How good is faculty explanation overall</div></label>
+                <fieldset class="selections">
+                <label>Needs Work</label>
+                <input type="radio" name="pageRating" value="0">
+                <input type="radio" name="pageRating" value="1">
+                <input type="radio" name="pageRating" value="2">
+                <input type="radio" name="pageRating" value="3">
+                <input type="radio" name="pageRating" value="4">
+                <input type="radio" name="pageRating" value="5">
+                <input type="radio" name="pageRating" value="6">
+                <input type="radio" name="pageRating" value="7">
+                <input type="radio" name="pageRating" value="8">
+                <input type="radio" name="pageRating" value="9">
+                <input type="radio" name="pageRating" value="10">
+                <label>Great</label>
+            </fieldset>
+
+            <label for="comment">
+                <div class="feedbackLabel">Additional Comments:</div>
+            </label>
+            <br>
+            <textarea id="comment" class="feedbackInfo comment" rows="5" maxlength="450" placeholder="Any additional comments! (450 characters)"></textarea>
+            <input type="submit" class="btnSubmit" id = "btnSubmit">
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    
+    <script>
+      // Initialize Firebase
+      var firebaseConfig = {
+        apiKey: "AIzaSyAVOpWwCMeG-zH1a7wtXVOuNteiscCR270",
+authDomain: "poesite-8f45c.firebaseapp.com",
+databaseURL: "https://poesite-8f45c-default-rtdb.firebaseio.com",
+projectId: "poesite-8f45c",
+storageBucket: "poesite-8f45c.appspot.com",
+messagingSenderId: "795519853653",
+appId: "1:795519853653:web:7029de65024eb31d3320dc",
+measurementId: "G-R6N35JPPM3"
+      };
+      firebase.initializeApp(firebaseConfig);
+    
+      // Get a reference to the feedback section of the database
+      var feedbackRef = firebase.database().ref('feedback');
+    
+      // Get references to the form inputs
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var ratingInput = document.getElementsByName('pageRating');
+      var commentInput = document.getElementById('comment');
+    
+      // Get reference to the submit button
+      var submitButton = document.getElementById('btnSubmit');
+    
+      // Add event listener to the submit button
+      submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+    
+        // Get the selected rating value
+        var ratingValue = '';
+        for (var i = 0; i < ratingInput.length; i++) {
+          if (ratingInput[i].checked) {
+            ratingValue = ratingInput[i].value;
+            break;
+          }
+        }
+    
+        // Get the current date and time
+        var dateTime = new Date().toLocaleString();
+    
+        // Create a new feedback object
+        var newFeedback = {
+          name: nameInput.value,
+          email: emailInput.value,
+          rating: ratingValue,
+          comment: commentInput.value,
+          dateTime: dateTime
+        };
+    
+        // Save the new feedback object to the database
+        feedbackRef.push(newFeedback);
+    
+        // Show success message
+        alert('Feedback submitted!');
+    
+        // Redirect to index.html
+        window.location.href = 'index.html';
+      });
+    </script>
+    
+
+
+
+</body>
+</html>
