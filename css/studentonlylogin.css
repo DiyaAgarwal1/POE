@@ -654,6 +654,7 @@ footer .row{
 @media (max-width:991px){
 div.header{
 display: block;
+background: none;
 }
 .header h1{
   margin-top: 0px;
@@ -669,9 +670,9 @@ display: block;
 }
   .form-box{
     width: 80%;
-    position:absolute;
+    position:relative;
     align-items: center;
-    margin: 0px;
+    margin: 283px;
     padding-top: 50px;
     margin-left: 9%;
   }
