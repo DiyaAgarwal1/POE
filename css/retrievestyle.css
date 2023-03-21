@@ -1,0 +1,25 @@
+/* font-family: "Josefin Sans", sans-serif; */
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(1, 101, 51);
+  }
+  
+  body {
+    background: rgb(1, 101, 51) !important;
+    overflow-x: hidden;
+  }
+
+h3{
+    text-align: center;
+    align-items: center;
+    padding-top: 40px !important;
+    margin-bottom: 20px !important;
+    background-color: rgb(1, 101, 51);
+    color: white;
+}
+.container{
+    background-color: rgb(1, 101, 51);
+}
+div{
+    background-color: rgb(1, 101, 51);
+}
