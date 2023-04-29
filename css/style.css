@@ -199,6 +199,59 @@ p.academic-section{
   font-size: 20px;
   font-weight: bolder;
 }
+button[title]::after {
+  content: attr(title);
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+}
+
+button:hover[title]::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* div.notes{
+  display: flex;
+  flex-direction: column;
+   flex-wrap: wrap;
+  justify-content: center;
+}
+div.notes button{
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+}
+div.notes a{
+  justify-content: center;
+  align-items: center;
+} */
+div.notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 34%;
+}
+div.notes a button {
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+}
+div.notes a {
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media(max-width:991px){
   .footer_section {
     width: 100%;
@@ -235,6 +288,9 @@ p.academic-section{
   .btn-part .button{
     width: 60%;
     margin-left: 20%;
+  }
+  div.notes button{
+    width: 60%;
   }
 }
   
